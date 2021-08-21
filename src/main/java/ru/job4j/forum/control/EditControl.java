@@ -29,7 +29,7 @@ public class EditControl {
 
     @GetMapping("/edit")
     public String editPage(@RequestParam("id") String id, Model model) {
-        Post post = service.getById(Integer.parseInt(id));
+        Post post = service.getById(Long.parseLong(id));
         model.addAttribute("post", post);
         return "edit";
     }

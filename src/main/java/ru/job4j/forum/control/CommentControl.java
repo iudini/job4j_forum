@@ -15,8 +15,8 @@ public class CommentControl {
     }
 
     @PostMapping("/add_comment")
-    public String addComment(@RequestParam("id") int id, Comment comment) {
-        service.addComment(comment, id);
-        return "redirect:/post?id=" + id;
+    public String addComment(@RequestParam("post_id") Long postId, Comment comment) {
+        service.addComment(comment, postId);
+        return "redirect:/post?id=" + postId;
     }
 }

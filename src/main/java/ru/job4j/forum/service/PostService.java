@@ -2,42 +2,38 @@ package ru.job4j.forum.service;
 
 import org.springframework.stereotype.Service;
 import ru.job4j.forum.model.Post;
+import ru.job4j.forum.repository.PostRepository;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.List;
 
 @Service
 public class PostService {
-    private final AtomicInteger index = new AtomicInteger(1);
-    private final Map<Integer, Post> posts = new HashMap<>();
+    private final PostRepository posts;
 
-    public PostService() {
-        Post post = new Post();
-        post.setName("Продаю машину ладу 01.");
-        post.setDesc("some description");
-        post.setCreated(GregorianCalendar.getInstance());
-        posts.put(0, post);
+    public PostService(PostRepository posts) {
+        this.posts = posts;
     }
 
     public Collection<Post> getAll() {
-        return posts.values();
+        List<Post> rsl = new ArrayList<>();
+        posts.findAll().forEach(rsl::add);
+        return rsl;
     }
 
-    public Post getById(int id) {
-        return posts.get(id);
+    public Post getById(Long id) {
+        return posts.findById(id).orElse(null);
     }
 
     public void save(Post post) {
-        post.setId(index.getAndIncrement());
         post.setCreated(GregorianCalendar.getInstance());
-        posts.put(post.getId(), post);
+        posts.save(post);
     }
 
     public void update(Post post) {
-        post.setCreated(posts.get(post.getId()).getCreated());
-        posts.put(post.getId(), post);
+//        post.setCreated(posts.get(post.getId()).getCreated());
+        posts.save(post);
     }
 }

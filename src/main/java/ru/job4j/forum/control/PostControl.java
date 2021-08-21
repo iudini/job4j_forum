@@ -18,7 +18,7 @@ public class PostControl {
     }
 
     @GetMapping("/post")
-    public String post(@RequestParam("id") int id, Model model) {
+    public String post(@RequestParam("id") Long id, Model model) {
         model.addAttribute("post", posts.getById(id));
         model.addAttribute("comments", comments.getById(id));
         return "post";

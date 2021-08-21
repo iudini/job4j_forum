@@ -28,7 +28,7 @@
         <div class="blog-post">
             <h2 class="blog-post-title">${post.name}</h2>
             <p class="blog-post-meta">${post.created.getTime()}</p>
-            <p>${post.desc}</p>
+            <p>${post.description}</p>
         </div>
     </div>
 
@@ -38,16 +38,16 @@
             <c:forEach items="${comments}" var="comment">
                 <div style="background-color:beige;">
                     <p class="blog-post-meta" style="background-color:#f5ffdf;">${comment.created.getTime()} by ${comment.author}</p>
-                    <p>${comment.desc}</p>
+                    <p>${comment.description}</p>
                 </div>
             </c:forEach>
         </div>
     </div>
 
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-        <form action="<c:url value='/add_comment?id=${post.id}'/>" method="post">
+        <form action="<c:url value='/add_comment?post_id=${post.id}'/>" method="post">
             <input type="text" class="form-control" placeholder="Your name" name="author">
-            <textarea class="form-control" name="desc"></textarea>
+            <textarea class="form-control" name="description"></textarea>
             <input name="submit" type="submit" value="submit"/>
         </form>
     </div>

@@ -26,8 +26,8 @@
         <c:if test="${post.id!=null}"><c:url value='/edit?id=${post.id}'/></c:if>" method="post">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" value="${post.name}">
-            <label for="desc">Description</label>
-            <input type="text" id="desc" name="desc" value="${post.desc}">
+            <label for="description">Description</label>
+            <input type="text" id="description" name="description" value="${post.description}">
             <input name="submit" type="submit" value="Save"/>
         </form>
     </div>
