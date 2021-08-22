@@ -20,7 +20,7 @@
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="<c:url value="/"/>">Home</a>
             <a class="p-2 text-dark" href="<c:url value='/create'/>">New post</a>
-            <a class="p-2 text-dark" href="<c:url value='/login'/>">Login</a>
+            <a class="p-2 text-dark" href="<c:url value='/logout'/>">Logout</a>
         </nav>
     </div>
 

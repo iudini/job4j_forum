@@ -12,7 +12,7 @@ public class Comment {
     private String author;
     private String description;
     private Calendar created;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "post_id")
     private Post post;
 

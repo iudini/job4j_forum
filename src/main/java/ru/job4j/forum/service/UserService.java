@@ -2,23 +2,17 @@ package ru.job4j.forum.service;
 
 import org.springframework.stereotype.Service;
 import ru.job4j.forum.model.User;
-
-import java.util.HashMap;
-import java.util.Map;
+import ru.job4j.forum.repository.UserRepository;
 
 @Service
 public class UserService {
-    private final Map<String, User> users = new HashMap<>();
+    private final UserRepository repository;
 
-    public UserService() {
-        users.put("user", User.of("user", "1234"));
+    public UserService(UserRepository repository) {
+        this.repository = repository;
     }
 
-    public User findByName(String name) {
-        return users.get(name);
-    }
-
-    public void save(User user) {
-        users.put(user.getUsername(), user);
+    public User findByUsername(String username) {
+        return repository.findByUsername(username);
     }
 }

@@ -33,7 +33,11 @@ public class PostService {
     }
 
     public void update(Post post) {
-//        post.setCreated(posts.get(post.getId()).getCreated());
+        post.setCreated(posts.findById(post.getId()).get().getCreated());
         posts.save(post);
+    }
+
+    public void deleteById(Long id) {
+        posts.deleteById(id);
     }
 }

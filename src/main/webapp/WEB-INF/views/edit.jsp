@@ -18,12 +18,19 @@
 </head>
 <body>
 <div class="container mt-3">
-    <div class="row">
-        <h4>Форум job4j</h4>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h4 class="my-0 mr-md-auto font-weight-normal">Форум job4j</h4>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark" href="<c:url value="/"/>">Home</a>
+            <a class="p-2 text-dark" href="<c:url value='/create'/>">New post</a>
+            <a class="p-2 text-dark" href="<c:url value='/logout'/>">Logout</a>
+        </nav>
     </div>
+
     <div>
         <form action="<c:if test="${post.id==null}"><c:url value='/create'/></c:if>
-        <c:if test="${post.id!=null}"><c:url value='/edit?id=${post.id}'/></c:if>" method="post">
+        <c:if test="${post.id!=null}"><c:url value='/edit'/></c:if>" method="post">
+            <input hidden name="id" value="${post.id}">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" value="${post.name}">
             <label for="description">Description</label>

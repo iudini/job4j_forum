@@ -3,44 +3,35 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <title>Login</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Регистрация</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
 </head>
 <body>
-<c:if test="${not empty errorMessage}">
-    <div style="color:red; font-weight: bold; margin: 30px 0px;">
-            ${errorMessage}
-    </div>
-</c:if>
 <div class="container mt-3">
-    <div class="row">
-        <h4>Форум job4j</h4>
-    </div>
-    <form name="login"action="<c:url value='/reg'/>" method="post">
-        <table>
-            <tr>
-                <td>UserName:</td>
-                <td><input type='text' name='username'></td>
-            </tr>
-            <tr>
-                <td>Password:</td>
-                <td><input type='password' name='password'/></td>
-            </tr>
-            <tr>
-                <td colspan='2'><input name="submit" type="submit" value="submit" /></td>
-            </tr>
-        </table>
+    <c:if test="${not empty errorMessage}">
+        <div style="text-align:center; color:red; font-weight: bold; margin: 30px 0px;">
+                ${errorMessage}
+        </div>
+    </c:if>
+    <form class="form-signin" method="post" action="/login">
+        <h2 class="form-signin-heading">Форум job4j</h2>
+        <p>
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Имя пользователя" required
+                   autofocus>
+        </p>
+        <p>
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Пароль" required>
+        </p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Регистрация</button>
     </form>
-    <div>
-        <a href="<c:url value='/reg'/>">Регистрация</a>
-    </div>
 </div>
 
 <!-- Optional JavaScript -->
