@@ -18,3 +18,7 @@ notifications:
       - qqqiva@gmail.com
     on_success: never # default: change
     on_failure: always # default: always
+
+env:
+  global:
+    - CODECOV_TOKEN="5548cd29-4450-4148-af40-4109f8c4eedf"
