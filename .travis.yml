@@ -4,7 +4,7 @@ jdk:
 sudo: false
 services:
 - postgresql
-before_script:
+before_install:
 - psql -c 'create database forum;' -U postgres
 script: mvn clean package -DskipTests=true
 after_success:
