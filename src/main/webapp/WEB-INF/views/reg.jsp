@@ -19,7 +19,7 @@
                 ${errorMessage}
         </div>
     </c:if>
-    <form class="form-signin" method="post" action="/login">
+    <form class="form-signin" method="post" action="/reg">
         <h2 class="form-signin-heading">Форум job4j</h2>
         <p>
             <label for="username" class="sr-only">Username</label>
