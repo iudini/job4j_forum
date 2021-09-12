@@ -1,7 +1,9 @@
 [![Build Status](https://app.travis-ci.com/iudini/job4j_forum.svg?branch=master)](https://app.travis-ci.com/iudini/job4j_forum)
 [![codecov](https://codecov.io/gh/iudini/job4j_forum/branch/master/graph/badge.svg?token=YTN4OVX34A)](https://codecov.io/gh/iudini/job4j_forum)
 
-## Реализация форума, с аутентификацией, пользователь может создавать темы, к темам можно писать комментарии
+### О проекте
+
+Реализация форума, с аутентификацией, пользователь может создавать темы, к темам можно писать комментарии
 
 Приложение доступно по [ссылке](https://aqueous-atoll-93246.herokuapp.com/)
 
